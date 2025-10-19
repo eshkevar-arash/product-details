@@ -126,7 +126,7 @@ productsWrapper.addEventListener('click', event => {
     if (targetBtn){
         let searchParam = targetBtn.parentElement.querySelector('h3').textContent
 
-        location.href = `/JS-192-project-dynamic-url-product-page/product.html?title=${searchParam}`
+        location.href = `${window.location.origin}/JS-192-project-dynamic-url-product-page/product.html?title=${searchParam}`
     }
 })
 /*const productCover = document.querySelector(".product-cover");
@@ -146,4 +146,5 @@ function showProduct() {
   productTitle.innerHTML = mainProduct.title;
   productPrice.innerHTML = mainProduct.price.toLocaleString();
   productInfo.innerHTML = mainProduct.description;
+
 }*/
