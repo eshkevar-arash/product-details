@@ -122,13 +122,16 @@ function showProducts(){
 }
 showProducts()
 productsWrapper.addEventListener('click', event => {
-    let targetBtn = event.target.closest('.detail-btn')
-    if (targetBtn){
-        let searchParam = targetBtn.parentElement.querySelector('h3').textContent
+    // بررسی می‌کنه دکمه جزئیات کلیک شده یا نه
+    const targetBtn = event.target.closest('.detail-btn');
+    if (targetBtn) {
+        // گرفتن عنوان محصول از h3 داخل همان کارت
+        const searchParam = targetBtn.parentElement.querySelector('h3').textContent.trim();
 
-        location.href = `${window.location.origin}/JS-192-project-dynamic-url-product-page/product.html?title=${searchParam}`
+        // انتقال به product.html با پارامتر title (مسیر نسبی چون هر دو فایل کنار هم هستند)
+        location.href = `product.html?title=${encodeURIComponent(searchParam)}`;
     }
-})
+});
 /*const productCover = document.querySelector(".product-cover");
 const productTitle = document.querySelector(".product-page-title");
 const productPrice = document.querySelector(".product-price");
@@ -148,3 +151,4 @@ function showProduct() {
   productInfo.innerHTML = mainProduct.description;
 
 }*/
+
