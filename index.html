@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="fa-IR" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>عنوان را از طریق جاوا اسکریپت تغییر دهید</title>
+    <link rel="stylesheet" href="./public/css/styles.css" />
+    <link
+            href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css"
+            rel="stylesheet"
+    />
+    <!-- Fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css">
+    <style>
+        .products {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+            width: 100%;
+            padding-bottom: 50px;
+        }
+
+        .product-card {
+            background-color: #1a1a1a;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 6px 16px rgba(255, 255, 255, 0.1);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #111;
+        }
+
+        .product-info {
+            padding: 16px;
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #fff;
+            margin: 0 0 10px 0;
+            height: 50px;
+            overflow: hidden;
+        }
+
+        .product-info p {
+            color: #aaa;
+            font-size: 13px;
+            line-height: 1.5;
+            height: 60px;
+            overflow: hidden;
+        }
+
+        .product-price {
+            font-weight: bold;
+            font-size: 14px;
+            color: #00ff99;
+            margin-top: 10px;
+        }
+
+        .product-card button {
+            background-color: #00ff99;
+            color: #000;
+            border: none;
+            border-radius: 0 0 14px 14px;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .product-card button:hover {
+            background-color: #00cc7a;
+            color: #fff;
+        }
+        .product-info h3{
+            white-space: nowrap;       /* متن در یک خط */
+            overflow: hidden;          /* مخفی کردن متن اضافی */
+            text-overflow: ellipsis;   /* نمایش ... در انتهای متن */
+        }
+        .product-info p {
+            height: 40px;
+            display: -webkit-box;          /* فعال‌سازی حالت فلکسیبل برای کنترل خطوط */
+            -webkit-line-clamp: 2;         /* تعداد خطوطی که مجاز به نمایش هست */
+            -webkit-box-orient: vertical;  /* جهت‌گیری باکس */
+            overflow: hidden;              /* مخفی کردن بقیه متن */
+            text-overflow: ellipsis;       /* نمایش ... */
+        }
+
+    </style>
+</head>
+<body >
+<img src="./public/images/header.gif" alt="" />
+<header class="client-header">
+    <!-- Right Items -->
+    <div class="right-items">
+        <a href="#">
+            <img
+                    class="website-logo"
+                    src="./public/images/logo.svg"
+                    alt="Website Logo"
+            />
+        </a>
+        <a href="#"> صفحه اصلی </a>
+        <a href="#"> شگفت انگیزها </a>
+        <a href="#"> سوپرمارکت </a>
+        <a href="#"> پرفروش ترین ها </a>
+    </div>
+
+    <!-- Left Items -->
+    <div class="left-items">
+        <a href="#"> ورود | ثبت نام </a>
+        <div class="br"></div>
+        <div class="basket-wrapper">
+            <button class="open-basket">
+                <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        stroke-width="1.5"
+                        stroke="currentColor"
+                        class="size-5"
+                >
+                    <path
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"
+                    />
+                </svg>
+            </button>
+
+            <!-- basket -->
+        </div>
+    </div>
+</header>
+<p style="text-align: center;width: 100%;padding: 30px 20px; font-size: 20px; color: darkgoldenrod">با کلیک بر روی دکمه نمایش جزئیات به صفحه نمایش محصولات همان محصول منتقل میشوید این مینی پروژه فقط برای سایز دسکتاپ طراحای شده و ریسپانسیو نیست</p>
+
+<main class="product-page-main first-section" style="padding: 0 20px">
+    <section class="products">
+
+
+    </section>
+</main>
+<section class="product-page-main second" style="padding: 0 20px">
+    <!-- Warning section -->
+    <div class="section-card">
+        <h3 class="bold-text">توضیات محصول:</h3>
+        <div>
+          <span class="icon">
+            <!-- Info Icon -->
+            <i class="fas fa-info-circle"></i>
+          </span>
+            <span class="content-text product-info">
+            لپ‌تاپ سبک و زیبا از سری ZenBook با پردازنده Ryzen 5 و ۸ گیگابایت
+            رم. مناسب برای کارهای روزمره و سبک با باتری قوی.
+          </span>
+        </div>
+        <div class="section-card">
+            <h3 class="bold-text">قبل از خرید مطالعه کنید!</h3>
+
+            <div>
+            <span class="icon">
+              <i class="fas fa-exclamation-circle"></i>
+            </span>
+                <span class="content-text">
+              امکان برگشت کالا در گروه لپ‌تاپ و الترابوک با دلیل "انصراف از
+              خرید" تنها در صورتی مورد قبول است که کالا در شرایط اولیه باشد (در
+              صورت پلمب بودن، کالا نباید باز شده باشد). تغییرات ایجادشده در
+              لپ‌تاپ‌های کاستوم (برای مثال ارتقا هارد، رم و...) توسط شرکت
+              گارانتی‌کننده و به صورت رسمی انجام شده است و شامل گارانتی می‌شوند.
+              لپ تاپ کاستوم به معنی ارتقا فنی بعضی قطعات لپ تاپ نو (آکبند) و بر
+              اساس استاندارد شرکت تولیدکننده است، لطفا برای اطلاعات بیشتر در این
+              مورد، به سوالات متداول مراجعه فرمایید. نصب ویندوز - دیجی کالا
+              سرویس راه‌های ثبت درخواست نصب ویندوز: 1- به سایت
+              Digikala-service.com رفته و در قسمت خدمات نصب، درخواست نصب ویندوز
+              خود را ثبت کنید. 2- برای ثبت درخواست با شماره 61930010-021 داخلی 1
+              تماس بگیرید. پس از ثبت درخواست، کارشناسان دیجی‌کالا‌ سرویس، زمان
+              ارائه خدمات را با شما هماهنگ می‌کنند.
+            </span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <span class="copyright"
+        >© توسعه داده شده با 💚 در <a href="https://flowbite.com/">سبزلرن™</a>
+        </span>
+        <ul class="footer-links">
+            <li>
+                <a href="#">خانه</a>
+            </li>
+            <li>
+                <a href="#">محصولات</a>
+            </li>
+            <li>
+                <a href="#">پشتیبانی ۲۴/۷</a>
+            </li>
+            <li>
+                <a href="#">آدرس حضوری</a>
+            </li>
+        </ul>
+    </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
